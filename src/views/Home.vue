@@ -5,7 +5,7 @@
 			<li @click="join('user')">회원서비스</li>
 			<li @click="join('master')">관리자 페이지 이동</li>
 		</ul>
-		<p>Test API요청 Data</p>
+		<p>Test API요청 Data(axios)</p>
 		<p>{{ apiData }}</p>
 	</div>
 </template>
