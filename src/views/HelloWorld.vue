@@ -1,6 +1,8 @@
 <template>
 	<div class="hello">
-		<h1>{{ msg }}</h1>
+		<button @click="lang('kr')">한국어</button>
+		<button @click="lang('en')">영어</button>
+		<h1>{{ $t('COMMON.BTN') }}</h1>
 		<p>
 			For a guide and recipes on how to configure / customize this project,<br />
 			check out the
@@ -51,6 +53,11 @@ export default {
 	name: 'HelloWorld',
 	props: {
 		msg: String,
+	},
+	methods: {
+		lang(value) {
+			this.$i18n.locale = value;
+		},
 	},
 };
 </script>

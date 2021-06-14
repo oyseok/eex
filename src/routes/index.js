@@ -8,6 +8,11 @@ const router = new VueRouter({
 	routes: [
 		{
 			path: '/',
+			name: 'seleBtn',
+			component: () => import('@/views/SelectBtn.vue'),
+		},
+		{
+			path: '/next',
 			name: 'HelloWorld',
 			component: () => import('@/views/HelloWorld.vue'),
 		},
