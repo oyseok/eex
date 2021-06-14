@@ -43,7 +43,7 @@ const router = new VueRouter({
 			},
 		},
 		{
-			path: '',
+			path: '/select',
 			name: 'seleBtn',
 			component: () => import('@/views/SelectBtn.vue'),
 		},

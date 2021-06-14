@@ -19,7 +19,7 @@
 				</li>
 				<li>
 					<button @click="signin">로그인</button>
-					<router-link to="/next">다국어처리 페이지 이동</router-link>
+					<router-link to="/select">다국어처리 페이지 이동</router-link>
 				</li>
 			</ul>
 		</div>
