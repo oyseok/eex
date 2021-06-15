@@ -4,10 +4,10 @@
 		<div>
 			<ul>
 				<li>
-					<label for="user">User</label>
 					<input id="user" type="radio" name="role" value="user" v-model="role" />
-					<label for="Master">Master</label>
+					<label for="user">User</label>
 					<input id="Master" type="radio" name="role" value="master" v-model="role" />
+					<label for="Master">Master</label>
 				</li>
 				<li>
 					<label for="email">이메일</label>
