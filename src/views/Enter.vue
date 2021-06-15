@@ -43,10 +43,10 @@ export default {
 
 			let isPass = false;
 			if (this.role === 'user') {
-				if (this.email !== user.email || this.password !== user.password) return alert('틀렸습니다!');
+				if (this.email !== user.email || this.password !== user.password) return alert('땡!! 틀릿다!');
 				isPass = true;
 			} else {
-				if (this.email !== master.email || this.password !== master.password) return alert('틀렸습니다!');
+				if (this.email !== master.email || this.password !== master.password) return alert('땡!! 틀릿다!');
 				isPass = true;
 			}
 			if (isPass) {
