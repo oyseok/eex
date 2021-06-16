@@ -1,58 +1,20 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import sample1 from '@/routes/sample1';
+import sample2 from '@/routes/sample2';
+import error from '@/routes/error';
 
 Vue.use(VueRouter);
 
+/**
+ * @NOTICE
+ * router 디렉토리 입니다,
+ * 관심사에 따라 파일을 생성후 "routes: []"에 추가 하시면 됩니다.
+ * sample1.js, sample2.js를 참고하세요.
+ */
 const router = new VueRouter({
 	mode: 'history',
-	routes: [
-		{
-			path: '/',
-			name: 'enter',
-			component: () => import('@/views/Enter.vue'),
-		},
-		{
-			path: '/home',
-			name: 'home',
-			component: () => import('@/views/Home.vue'),
-		},
-		{
-			path: '/user',
-			name: 'user',
-			component: () => import('@/views/User.vue'),
-			beforeEnter: (to, form, next) => {
-				const accountInfo = JSON.parse(localStorage.getItem('info'));
-				if (!accountInfo || accountInfo.role !== 'user') {
-					alert('User만 접속 가능합니다');
-					next({ name: 'home' });
-				}
-				next();
-			},
-		},
-		{
-			path: '/master',
-			name: 'master',
-			component: () => import('@/views/Master.vue'),
-			beforeEnter: (to, form, next) => {
-				const accountInfo = JSON.parse(localStorage.getItem('info'));
-				if (!accountInfo || accountInfo.role !== 'master') {
-					alert('Master만 접속 가능합니다');
-					next({ name: 'home' });
-				}
-				next();
-			},
-		},
-		{
-			path: '/select',
-			name: 'seleBtn',
-			component: () => import('@/views/SelectBtn.vue'),
-		},
-		{
-			path: '/next',
-			name: 'HelloWorld',
-			component: () => import('@/views/HelloWorld.vue'),
-		},
-	],
+	routes: [...sample1, ...sample2, ...error],
 });
 
 export default router;

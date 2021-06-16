@@ -1,12 +1,18 @@
 import Vue from 'vue';
 import App from './App.vue';
+
+// router
 import router from '@/routes/index';
+
+// vuex
+import store from '@/store/index';
+
+// VueI18n(다국어)
 import VueI18n from 'vue-i18n';
 import kr from '@/lang/locale_kr.json';
 import en from '@/lang/locale_en.json';
 
 Vue.use(VueI18n);
-
 const i18n = new VueI18n({
 	locale: 'kr',
 	fallbackLocale: 'kr',
@@ -15,10 +21,9 @@ const i18n = new VueI18n({
 
 // logger
 import VueLogger from 'vuejs-logger';
-// 개발모드, 운영모드 사용 시 설정
-// const isProduction = process.env.NODE_ENV === 'production';
+const isLogActive = process.env.NODE_ENV === 'development' ? true : false;
 const options = {
-	isEnabled: true,
+	isEnabled: isLogActive,
 	logLevel: 'debug',
 	stringifyArguments: false,
 	showLogLevel: true,
@@ -33,4 +38,5 @@ new Vue({
 	render: h => h(App),
 	router,
 	i18n,
+	store,
 }).$mount('#app');

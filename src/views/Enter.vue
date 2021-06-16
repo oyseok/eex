@@ -31,22 +31,21 @@ export default {
 	data() {
 		return {
 			role: 'user',
-			email: 'user@naver.com',
-			password: '123',
+			email: '',
+			password: '',
 		};
 	},
 	methods: {
 		signin() {
-			const user = { email: 'user@naver.com', password: '123' };
-			const master = { email: 'master@naver.com', password: '123' };
+			const userInfo = this.$store.state.dummyData;
 			localStorage.removeItem('info');
 
 			let isPass = false;
 			if (this.role === 'user') {
-				if (this.email !== user.email || this.password !== user.password) return alert('땡!! 틀릿다!');
+				if (this.email !== userInfo[0].email || this.password !== userInfo[0].password) return alert('땡!! 틀릿다!');
 				isPass = true;
 			} else {
-				if (this.email !== master.email || this.password !== master.password) return alert('땡!! 틀릿다!');
+				if (this.email !== userInfo[1].email || this.password !== userInfo[1].password) return alert('땡!! 틀릿다!');
 				isPass = true;
 			}
 			if (isPass) {
