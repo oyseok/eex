@@ -5,13 +5,13 @@
 npm install
 ```
 
-### 서버 환경에 따른 시작 
+### 서버 시작
 ```
 # production (운영서버)
 npm start
 
 # development (개발서버)
-npm run start
+npm run dev
 
 # test (테스트서버)
 npm run test
