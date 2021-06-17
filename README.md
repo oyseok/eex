@@ -1,24 +1,28 @@
 # example
 
-## Project setup
+## npm 설치
 ```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
+npm install
 ```
 
-### Compiles and minifies for production
+### 서버 환경에 따른 시작 
 ```
-yarn build
+# production (운영서버)
+npm start
+
+# development (개발서버)
+npm run start
+
+# test (테스트서버)
+npm run test
 ```
 
-### Lints and fixes files
+### 빌드
 ```
-yarn lint
+npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### vue lint
+```
+npm run lint
+```
