@@ -14,7 +14,24 @@ Vue.use(VueRouter);
  */
 const router = new VueRouter({
 	mode: 'history',
-	routes: [...sample1, ...sample2, ...error],
+	routes: [
+		{
+			path: '/',
+			name: 'enter',
+			component: () => import('@/views/Enter.vue'),
+		},
+		{
+			path: '/',
+			component: () => import('@/views/layouts/LayoutForm.vue'),
+			children: [...sample1],
+		},
+		{
+			path: '/',
+			component: () => import('@/views/layouts2/LayoutForm2.vue'),
+			children: [...sample2],
+		},
+		...error,
+	],
 });
 
 export default router;
